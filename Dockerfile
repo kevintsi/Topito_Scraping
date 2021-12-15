@@ -2,8 +2,8 @@ FROM python:3.8
 
 WORKDIR /app
 
-COPY ./app .
+COPY ./app/ .
 
-RUN pip3 install -R requirements.txt && jupyter nbconvert --to python main.ipynb
+RUN pip3 install -r requirements.txt && mkdir analytics 
 
-CMD ["python3","app/main.py"]
+CMD ["sleep", "infinity"]

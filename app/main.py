@@ -10,6 +10,7 @@ from models.Manga import Manga # Import classe Manga
 import pandas as pd
 import matplotlib.pyplot as plot
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--number", type=int, help="Classement souhaité (entre 1 (le moins vendu) et 10 (le plus vendu))")
@@ -44,7 +45,7 @@ def getRanking(df : pd.DataFrame, nb):
 
     df.plot.bar(x="name", y="nb_sold", rot=70, title="Les mangas les plus vendus")
 
-    plot.show(block=True)
+    plot.savefig(f"analytics/ranking_{datetime.now().isoformat()}.png",  bbox_inches="tight")
 
     print(df.to_dict)
 

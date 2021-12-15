@@ -1,0 +1,8 @@
+version: "3.0"
+services:
+  scrap_service:
+    build: .
+    container_name: scrap_topito_container
+    volumes:
+      - "./data/analytics:/app/analytics"
+    
