@@ -11,10 +11,13 @@ import pandas as pd
 import matplotlib.pyplot as plot
 import argparse
 from datetime import datetime
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--number", type=int, help="Classement souhaité (entre 1 (le moins vendu) et 10 (le plus vendu))")
 args = parser.parse_args()
+
+time.sleep(1)
 
 # Récupère le code source et le sauvegarde dans une variable (request_text)
 request_text = requests.get("https://www.topito.com/top-manga-vente-monde-temps")
